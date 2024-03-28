@@ -41,5 +41,6 @@ IoT 개발자과정 SQLServer 학습 리포지토리
      [ORDER BY 속성이름(들) [ASC|DESC]]
     ```
     - SELECT문 학습
-    
+        - 기본, 조건검색 학습 중
+
 ## 2일차
