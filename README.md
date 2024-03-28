@@ -22,10 +22,24 @@ IoT 개발자과정 SQLServer 학습 리포지토리
 - DB언어
     - SQL(Structured Query Language) : 구조화된 질의 언어
        - DDL(Data Definition Lang) -> 데이터베이스, 테이블, 인덱스 생성
-       - DML(Data Manipulation Lang) -> '조종', 검색, 삽입, 수정, 삭제 등 기능(!)
+       - DML(Data Manipulation Lang) -> '조종', 검색(SELECT), 삽입(INSERT), 수정(UPDATE), 삭제(DELETE) 등 기능(중요!)
        - DCL(Data Control Lang) -> 권한, 트랜스액션 부여/제거 기능 .. '제어'
 
 - SQL 기본 학습
     - SSMS 실행 
 
+- DML 학습
+    - SQL 명령어 키워드 : SELECT, INSERT, UPDATE, DELETE
+    - IT개발 표현언어 : Request, Create, Update, Delete(CRUD로 부름. CRU 개발 뜻은 INSERT, UPDATE, SELECT를 할 수 있는 기능을 개발하라 )
+    - SELECT문
+    ```sql
+    SELECT [ALL | DISTINCT] 속성이름(들)
+      FROM 테이블이름(들)
+     [WHERE 검색조건(들)]
+     [GROUP BY 속성이름(들)]
+     [HAVING 검색조건(들)]
+     [ORDER BY 속성이름(들) [ASC|DESC]]
+    ```
+    - SELECT문 학습
+    
 ## 2일차
