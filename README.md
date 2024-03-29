@@ -23,14 +23,17 @@ IoT 개발자과정 SQLServer 학습 리포지토리
 
 - DB언어
     - SQL(Structured Query Language) : 구조화된 질의 언어
-       - DDL(Data Definition Lang) -> 데이터베이스, 테이블, 인덱스 생성
+       - DDL(Data Definition Lang) -> 데이터베이스, 테이블, 인덱스 생성, CREATE, ALTER, DROP
        - DML(Data Manipulation Lang) -> '조종', 검색(SELECT), 삽입(INSERT), 수정(UPDATE), 삭제(DELETE) 등 기능(중요!)
-       - DCL(Data Control Lang) -> 권한, 트랜스액션 부여/제거 기능 .. '제어'
+       - DCL(Data Control Lang) -> 보안, 권한 부여/제거 기능 .. '제어' , GRANT, REVOKE
+       - TCL(Transaction Control Lang) -> 트랜스액션(트랜잭션) 제어하는 기능 COMMIT, ROLLBACK ,, 원래는 DCL의 일부, But 기능이 특이해서 TCL로 분리
 
 - SQL 기본 학습
     - SSMS 실행 
 
     ![SSMS로그인](https://raw.githubusercontent.com/qkrskdusdlqslek/basic-database-2024/main/images/db002.png)
+
+    - 특이사항 - SSMS 쿼리창에서 소스코드 작성시 빨간색 오류 밑줄이 가끔 표현(전부 오류는 아님!)
 
 - DML 학습
     - SQL 명령어 키워드 : SELECT, INSERT, UPDATE, DELETE
@@ -48,3 +51,50 @@ IoT 개발자과정 SQLServer 학습 리포지토리
         - 기본, 조건검색 학습 중
 
 ## 2일차
+- Database 학습
+    - DB 개발시 사용할 수 있는 툴
+        - SSMS(기본)
+        - Visual Studio - 아무런 설치 없이 개발 가능
+        - Visual Studio Code - sql Server(msql) 플러그인 설치하고 개발
+    - ServerName(HostName) - 내컴퓨터이름 | 내네트워크주소 | 127.0.0.1(LoopBack IP)|localhost(LoopBack URL)
+    - 관계 데이터 모델
+        - 릴레이션 - 행과 열로 구성된 테이블(관계 데이터모델에서만)
+            - 행(튜플), 열(속성), 스키마, 인스턴스 용어
+        - 매핑되는 이름 테이블(실제 DB)
+            - 행(레코드), 열(컬럼, 필드), 내포(필드명), 외연(데이터)
+        - 차수(degree) : 속성의 개수
+        - 카디날리티(cardinality) : 튜플의 수
+
+        - 릴레이션 특징
+            1. 속성은 단일값을 가짐(책 이름이 여러개 들어가면 안됨)
+            2. 속성은 서로 다른 이름으로 구성(책 이름이라는 속성이 두번 있으면 안됨)
+            3. 속성의 값은 정의된 도매인값만 가짐(대학교 학년에 5학년이 있으면 안됨)
+            4. 속성의 순서는 상관없음
+            5. 릴레이션 내의 중복된 튜플 허용안함(같은 책 정보를 두번 넣을 수 없음)
+            6. 튜플 순서는 상관없음
+
+        - 관계 데이터 모델은 아래의 요소로 구성됨
+            - 릴레이션(Relation)
+            - 제약조건(Constraints)
+            - 관계대수(Relational algebra)
+
+- DML 학습
+    - SELECT문
+        - 복합조건, 정렬
+        - 집계함수와 GROUP BY
+            - SUM(총합), AVG(평균), COUNT(개수), MAX(최대값), MIN(최소값) 
+            - 집계함수 외 일반 컬럼은 GROUP BY 절에 속한 컬럼만 SELECT문에 사용가능
+            - HAVING은 집계함수의 필터로 GROUP BY 뒤에 작성, WHERE절과 필터링이 다르다
+
+
+
+
+
+
+
+
+
+
+
+
+
