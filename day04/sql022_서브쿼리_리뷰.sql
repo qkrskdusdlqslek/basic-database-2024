@@ -31,7 +31,8 @@ SELECT o1.orderid
 
 -- IN, NOT IN
 -- 대한민국에 거주하는 고객에 판매한 도서의 총판매액
-SELECT SUM(saleprice) AS '대한민국 고객 총판매액'
+-- 118000 - 46000 = 72000(박지성, 추신수 구매한 금액 -> NOT IN 사용)
+SELECT FORMAT(SUM(saleprice), '#,#') AS '대한민국 고객 총판매액'
   FROM Orders
  WHERE custid IN(SELECT custid
                    FROM Customer
