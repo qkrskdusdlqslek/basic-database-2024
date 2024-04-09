@@ -16,15 +16,18 @@ SELECT Names AS '도서명'
 SELECT m.Names AS '회원명'
      , m.Levels AS '회원등급'
 	 , m.Addr AS '회원주소'
-	 , r.returnDate AS '대여일'
-  FROM membertbl AS m, rentaltbl as r
- WHERE returnDate IS NULL AND m.memberIdx = r.memberIdx 
+	 , r.rentalDate AS '대여일'
+  FROM membertbl AS m LEFT JOIN rentaltbl as r ON m.memberIdx = r.memberIdx
+ WHERE rentalDate IS NULL AND m.Levels = 'A';
 
 -- 4번
-SELECT *
-  FROM divtbl;
+SELECT d.Names
+  FROM divtbl as d JOIN bookstbl as b
+ WHE
 
-SELECT *
-  FROM bookstbl;
+
+
+-- 5번
+
 
  
